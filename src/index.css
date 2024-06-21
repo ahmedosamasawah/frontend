@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('./assets/fonts/ArbFONTS-Montserrat-Arabic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-Black.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Arabic";
+  src: url("./assets/fonts/ArbFONTS-Montserrat-Arabic-Thin.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+  scroll-padding-block-start: 2rem;
+}
+
+body {
+  font-family: "Montserrat-Arabic", sans-serif;
+  background-color: #002343;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This is a fallback for browsers which don't support `dvh` yet (firefox) */
+  /*min-height: 100dvh;*/
+}
+
+a {
+  @apply border-b-2 border-transparent;
+  transition: 0.15s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1215px;
+  }
+}
+
+a:is(:hover, :focus-visible, :active) {
+  @apply border-secondary-normal;
+}
+/* 
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1124px;
+  }
+} */
+
+.btn--filled {
+  @apply border-secondary-normal bg-secondary-normal hover:bg-secondary-normal-hover active:bg-secondary-normal-active;
+}
+
+.btn--outlined {
+  @apply border-secondary-normal text-secondary-normal hover:border-secondary-normal-hover hover:text-secondary-normal-hover active:border-secondary-normal-active;
+}
+
+.rdp {
+  z-index: 50;
+  color: white;
+  font-size: 0.875rem !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+.rdp-caption,
+.rdp-table {
+  direction: ltr;
+}
+
+.rdp-nav_button_previous:hover,
+.rdp-nav_button_next:hover {
+  color: #002343 !important;
+  background-color: #e4ac66 !important;
+}
+
+.rdp-months {
+  padding: 20px;
+  width: fit-content;
+  justify-content: flex-end;
+  background-color: #002343;
+  border-radius: 8px;
+}
+
+.rdp-cell:hover {
+  background-color: transparent;
+  /*border: 2px solid #E4AC66;*/
+}
+
+.rdp-cell {
+  border: 2px solid transparent;
+}
+
+.rdp-cell button:hover {
+  border-color: #e4ac66;
+  background-color: transparent !important;
+}
+
+.slick-prev {
+  display: none; /* temp */
+  left: 7px !important;
+}
+
+.slick-next {
+  display: none; /* temp */
+  left: 90px;
+}
+
+.slick-next:before {
+  content: url("../public/assets/icons/arrow-prev.svg") !important;
+  display: none; /* temp */
+}
+
+.slick-prev:before {
+  content: url("../public/assets/icons/arrow-next.svg") !important;
+  display: none; /* temp */
+}
+
+.slick-slide {
+  padding: 0 10px;
+  display: flex !important;
+  justify-content: center;
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 90%;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-height: 425px) {
+  .hero-section {
+    @apply pt-40;
+  }
+}
+
+@media (max-height: 250px) {
+  .hero-section {
+    @apply pt-60;
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #395875;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #002343;
+  border-radius: 7px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #000c17;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
